@@ -25,8 +25,8 @@
 
       if (!this.id) return false;
 
-      let url = URL.replace(':id', this.id);
-      let data = this.toJSON();
+      var url = URL.replace(':id', this.id);
+      var data = this.toJSON();
 
       // model cleanup
       if (data.selected) delete data.selected;
@@ -39,7 +39,7 @@
     // @params : ids : [...id]
     // @return : promise
     Candidate.deleteMany = function(ids) {
-      let url = '/candidate/delete';
+      var url = '/candidate/delete';
       return $http.post(url, ids);
     };
 
