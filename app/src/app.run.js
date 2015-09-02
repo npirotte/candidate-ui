@@ -53,7 +53,7 @@
       //add a new candidate
       $httpBackend.whenPOST('/candidate').respond(function(method, url, data) {
 
-        var success = Math.random() > .5;
+        var success = Math.random() > .2;
 
         console.log(success);
 
