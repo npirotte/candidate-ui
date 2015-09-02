@@ -1,0 +1,10 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<strong>{{ctrl.step.description}}</strong>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="task in ctrl.step.tasks">
+			<span class="glyphicon glyphicon-arrow-right"></span> <span ng-bind-html="task"></span>
+		</li>
+	</ul>
+</div>

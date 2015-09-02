@@ -1,0 +1,15 @@
+.candidates-list
+{
+
+  max-width: 600px;
+}
+
+.candidates-list tbody tr td
+{
+  vertical-align: middle;
+}
+
+.candidates-delete
+{
+  margin-right: 4px
+}

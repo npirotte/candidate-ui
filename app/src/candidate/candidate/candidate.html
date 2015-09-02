@@ -1,0 +1,14 @@
+<tr class="candidate" ng-class="{'info' : candidateController.candidate.selected, 'danger' : candidateController.candidate.hasError}">
+  <td valign="middle">
+    <input type="checkbox" ng-model="candidateController.candidate.selected">
+  </td>
+  <td valign="middle" ng-class="{'text-danger' : !candidateController.candidate.enabled, 'text-success' : candidateController.candidate.enabled}">
+    {{candidateController.candidate.name}} <a class="glyphicon glyphicon-repeat" ng-if="candidateController.candidate.hasError" ng-click="candidateController.retrySave()"></a>
+  </td>
+  <td valign="middle" style="width: 110px">
+    <div class="btn-group">
+      <button class="btn btn-primary" type="button" ng-model="candidateController.candidate.enabled" btn-radio="true" ng-change="candidateController.update()">Yes</button>
+      <button class="btn btn-danger" type="button" ng-model="candidateController.candidate.enabled" btn-radio="false" ng-change="candidateController.update()">No</button>
+    </div>
+  </td>
+</tr>

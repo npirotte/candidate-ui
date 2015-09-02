@@ -1,0 +1,19 @@
+<form class="form-inline" ng-submit="candidateFormController.addCandidate(candidate)" name="candidate" novalidate>
+  <div class="form-group">
+    <label for="name" class="sr-only">Nom</label>
+    <input
+      class="form-control"
+      type="text" name="name"
+      placeholder="Name"
+      ng-model="candidateFormController.candidate.name"
+      required
+      ng-minlength="{{candidateFormController.nameValidation.minLength}}"
+      ng-maxlength="{{candidateFormController.nameValidation.maxLength}}" />
+
+    <br />
+    <span class="label label-danger" ng-if="candidate.name.$dirty && candidate.name.$error.required">Name is required</span>
+    <span class="label label-danger" ng-if="candidate.name.$dirty && candidate.name.$error.minlength">Name lenght is minimum {{candidateFormController.nameValidation.minLength}}</span>
+    <span class="label label-danger" ng-if="candidate.name.$dirty && candidate.name.$error.maxlength  ">Name lenght is maximum {{candidateFormController.nameValidation.maxLength}}</span>
+  </div>
+  <button type="submit" class="btn btn-default">Add candidate</button>
+</form>

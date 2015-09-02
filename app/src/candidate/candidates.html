@@ -1,0 +1,34 @@
+<section class="candidates">
+
+  <div class="alert alert-info" ng-if="!candidatesController.candidates.length">
+      There is no candidates in the database.
+  </div>
+
+  <table class="candidates-list table table-striped table-bordered" ng-if="candidatesController.candidates.length">
+    <thead>
+      <tr>
+        <th style="width: 30px">
+          <input type="checkbox" ng-click="candidatesController.toggleSelection($event)" />
+        </th>
+        <th ng-click="candidatesController.reorder('name')">
+          <i ng-class="candidatesController.reorderIconClass('name')"></i>
+          Name
+        </th>
+        <th ng-click="candidatesController.reorder('enabled')">
+          <i ng-class="candidatesController.reorderIconClass('enabled')"></i>
+          Enable ?
+        </th>
+      </tr>
+    </thead>
+    <tr ng-repeat="candidate in candidatesController.candidates | orderBy : candidatesController.orderProp : candidatesController.reverse track by candidate.id" candidate="candidate" />
+  </table>
+
+  <footer>
+    <div class="pull-left" ng-show="candidatesController.selectedCandidatesNbr()">
+      <button type="button" class="btn btn-danger candidates-delete" ng-click="candidatesController.deleteCandidates()">Delete selected candidates</button>
+    </div>
+    <candidate-form on-add="candidatesController.addCandidate(candidate)" />
+
+  </footer>
+
+</section>

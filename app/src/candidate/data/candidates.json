@@ -1,0 +1,22 @@
+[
+	{
+		"id":1,
+		"name":"Pierre",
+		"enabled":false
+	},
+	{
+		"id":2,
+		"name":"Jean",
+		"enabled":true
+	},
+	{
+		"id":3,
+		"name":"Luc",
+		"enabled":true
+	},
+	{
+		"id":4,
+		"name":"Mathieu",
+		"enabled":true
+	}
+]

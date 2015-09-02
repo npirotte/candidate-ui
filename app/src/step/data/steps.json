@@ -1,0 +1,91 @@
+[
+	{
+		"title": "Step 1 : Display the list of candidates",
+		"FRONT" : {
+			"description": "The goal is to display a list of candidates in a <table>.",
+			"tasks": [
+				"Create a new module named <strong>app.candidate</strong>",
+				"Create a new page (view and controller) accessible by the <strong>app.candidate</strong> route",
+				"Add a <strong>Candidates</strong> link in the navigation bar to access to the new page",
+				"Load the list of candidates by using the endpoint <strong>GET /candidate</strong>",
+				"Display the list of candidates on the new page in 2 columns:<br><img src='assets/step1-2.png' width='200px' /><br>For the <strong>enabled</strong> property, use the radio button component from AngularUI bootstrap",
+				"A directive shall be used for each line",
+				"Order the list by name if the user click on the name header"
+
+			]
+		},
+		"BACK" : {
+			"description": "Create an service/endpoint to get the list of candidates",
+			"tasks": [
+				"Create a entity named <strong>Candidate</strong> described by properties : <strong>id</strong> (Long) <strong>name</strong> : String, <strong>enabled</strong> : Boolean",
+				"Create the <strong>Repository/Dao</strong> for this new entity. <strong>Test It !</strong>",
+				"Create a new service to get the list of candidates. <strong>Test It !</strong>",
+				"Create a new controller and add a new endpoint : <strong>GET /candidate</strong>. This endpoint should return the list of candidates. <strong>Test It !</strong>"
+			]
+		}
+	},
+	{
+		"title": "Step 2 : enabled or Disable a candidate",
+		"FRONT" : {
+			"description": "The goal is to enabled or disable one candidate in the list",
+			"tasks": [
+				"Switch the button style when the user click on the toggle button enabled/disable",
+				"Update the candidate by calling the endpoint <strong>PUT /candidate/{id} requestBody : {enabled:true/false}</strong>"
+			]
+		},
+		"BACK" : {
+			"description": "Create a service/endpoint to update a candidate",
+			"tasks": [
+				"Add a new endpoint : <strong>PUT /candidate/{id} requestBody : {enabled:true/false}</strong>. <strong>Test It !</strong>",
+				"Update the corresponding candidate in the database"
+			]
+		}
+	},
+	{
+		"title": "Step 3 : Add a new candidate",
+		"FRONT" : {
+			"description": "The goal is to create a form to add a new candidate",
+			"tasks": [
+				"Add a form in the table to add a new candidate :<br><img src='assets/step3.png' width='200px' /><br>",
+				"Make sure the name has between 1 and 30 characters, and display an error message otherwise",
+				"Add the new candidate by calling the endpoint <strong>POST /candidate requestBody : {name:'',enabled:true}</strong>",
+				"The list should be updated with the response"
+			]
+		},
+		"BACK" : {
+			"description": "Create a service/endpoint to add a new candidate",
+			"tasks": [
+				"Add a new endpoint : <strong>POST /candidate requestBody : {name:'',enabled:true/false}</strong>. <strong>Test It !</strong>",
+				"Add the new candidate in the database"
+			]
+		}
+	},
+	{
+		"title": "Step 4 : Delete a list of candidate",
+		"FRONT" : {
+			"description": "The goal is to delete the selected candidate",
+			"tasks": [
+				"Add a column with a checkbox for on each line",
+				"Add a button to delete the selected candidates.<br><img src='assets/step4.png' width='200px' />",
+				"Delete the selected candidates by calling the endpoint <strong>POST /candidate/delete requestBody : [1,6]</strong>. The list of ids shall be sent to the endpoint",
+				"The list shall be synchronized"
+			]
+		},
+		"BACK" : {
+			"description": "Create an service/endpoint to deelete a list of candidates",
+			"tasks": [
+				"Add a new endpoint : <strong>POST /candidate/delete requestBody : [1,6]</strong>. <strong>Test It !</strong>",
+				"Delete the candidates corresponding to the ids in the database"
+			]
+		}
+	},{
+		"title": "Step 5 (optional) : Improve the app !",
+		"FRONT" : {
+			"description": "Show us how you could improve the app, if you have enough time. You can modify any part of the application."
+		},
+		"BACK" : {
+			"description": "See candidate-back/README.md BONUS section",
+			"tasks": []
+		}
+	}
+]
