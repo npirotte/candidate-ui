@@ -20,7 +20,7 @@
         </th>
       </tr>
     </thead>
-    <tr ng-repeat="candidate in candidatesController.candidates | orderBy : candidatesController.orderProp : candidatesController.reverse track by $index" candidate="candidate" />
+    <tr ng-repeat="candidate in candidatesController.candidates | orderBy : candidatesController.orderProp : candidatesController.reverse track by candidatesController.itemTracker(candidate)" candidate="candidate" />
   </table>
 
   <footer>

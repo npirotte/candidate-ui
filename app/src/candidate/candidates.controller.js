@@ -26,6 +26,13 @@
 
       /* **** public methods **** */
 
+      // allow id tracking to fall back to random to avoid rg-repeat error when server errors;
+      // @return : <int> item id or incremental no saved item id
+      var trackerCount = 0;
+      this.itemTracker = function(item) {
+        return item.id || ('no-saved' + ++trackerCount);
+      }
+
       // change the ordering prop or reverse ordering
       // @param : <string> orderProp
       this.reorder = function(orderProp) {

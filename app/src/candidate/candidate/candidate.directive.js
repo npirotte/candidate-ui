@@ -36,6 +36,9 @@
 
           // update the candidate
           this.update = function() {
+
+            if( !self.candidate.id ) return false;
+
             self.candidate.$update().then(
               function() { growl.success('Candidate ' + self.candidate.name + ' updated !'); },
               function() { growl.error('An error occured.'); }

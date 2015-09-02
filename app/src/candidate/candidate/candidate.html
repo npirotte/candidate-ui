@@ -3,7 +3,7 @@
     <input type="checkbox" ng-model="candidateController.candidate.selected">
   </td>
   <td valign="middle" ng-class="{'text-danger' : !candidateController.candidate.enabled, 'text-success' : candidateController.candidate.enabled}">
-    {{candidateController.candidate.name}} <a class="glyphicon glyphicon-repeat" ng-if="candidateController.candidate.hasError" ng-click="candidateController.retrySave()"></a>
+    {{::candidateController.candidate.name}} <a class="glyphicon glyphicon-repeat" ng-if="candidateController.candidate.hasError" ng-click="candidateController.retrySave()"></a>
   </td>
   <td valign="middle" style="width: 110px">
     <div class="btn-group">

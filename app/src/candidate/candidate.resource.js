@@ -22,6 +22,9 @@
     // $update could have been a $resource method, but has the server respond nothing, the model is erased on $update, prototype method is more fine tuned
     // @return : promise
     Candidate.prototype.$update = function() {
+
+      if (!this.id) return false;
+
       let url = URL.replace(':id', this.id);
       var data = this.toJSON();
 
