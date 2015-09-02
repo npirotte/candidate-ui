@@ -43,9 +43,9 @@ There is only one default task, so just run gulp command at project root
 gulp
 ```
 
-### data
+### Data & server API
 
-I use mocked up data for testing. The [post] /candidate end point has a randow fail of 20% to simulate server failure handling
+I use mocked up data for testing. The [post] /candidate end point has a randow fail of 20% to simulate server failure handling.
 
 ### Running the App during Development
 
