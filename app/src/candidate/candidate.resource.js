@@ -26,8 +26,9 @@
       if (!this.id) return false;
 
       let url = URL.replace(':id', this.id);
-      var data = this.toJSON();
+      let data = this.toJSON();
 
+      // model cleanup
       if (data.selected) delete data.selected;
       if (data.hasError) delete data.hasError;
 
@@ -42,7 +43,7 @@
       return $http.post(url, ids);
     };
 
-    // static model validation & defaultValue data
+    // static model validation & defaultValue
     Candidate.model = {
       name : {
         required : true,

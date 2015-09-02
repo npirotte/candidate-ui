@@ -27,7 +27,7 @@
       /* **** public methods **** */
 
       // allow id tracking to fall back to random to avoid rg-repeat error when server errors;
-      // @return : <int> item id or incremental no saved item id
+      // @return : <int> item id or <tring> incremental no-saved item id
       var trackerCount = 0;
       this.itemTracker = function(item) {
         return item.id || ('no-saved' + ++trackerCount);
@@ -61,8 +61,8 @@
         });
       };
 
-      // output selected rows count
-      // @return <int> count
+      // output true is one or more rows are selected
+      // @return <bool>
       this.selectedCandidatesNbr = function() {
         var selectedCandidates = self.candidates.filter(function(candidate) {
           return candidate.selected;

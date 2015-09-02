@@ -17,6 +17,7 @@
           onAdd : '&'
         },
         bindToController : true,
+        controllerAs : 'candidateFormController',
         controller : function() {
           var self = this;
 
@@ -27,6 +28,7 @@
 
           this.nameValidation = CandidateResource.model.name;
 
+          // add a new Candidate
           this.addCandidate = function(form) {
             if(form.$invalid) return false;
 
@@ -40,14 +42,15 @@
               }
             );
 
+            // parent ctrl action
             self.onAdd({ candidate : candidate });
 
+            // form reset
             form.$setPristine();
-            this.candidate.name = null;
+            this.candidate.name = CandidateResource.model.name.defaultValue;
           };
 
-        },
-        controllerAs : 'candidateFormController'
+        }
       };
     }
 

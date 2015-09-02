@@ -17,6 +17,7 @@
           candidate : '='
         },
         bindToController : true,
+        controllerAs : 'candidateController',
         controller : function() {
           var self = this;
 
@@ -45,8 +46,7 @@
             );
           };
 
-        },
-        controllerAs : 'candidateController'
+        }
       };
     }
 }();
