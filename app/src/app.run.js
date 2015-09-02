@@ -55,8 +55,6 @@
 
         var success = Math.random() > .2;
 
-        console.log(success);
-
         if (!success) return [500, {}, {}];
 
         var candidate = angular.fromJson(data);

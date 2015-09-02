@@ -27,7 +27,7 @@ npm install
 
 ### Source compilation
 
-I use gulp to compile angular modules. Each modules (folder) are compiler separately in a single file named as module folder and dropped in the 'dist' folder.
+I use gulp to compile angular modules. Each modules (folder) are compiled separately in a single file named as the module folder and dropped in the 'dist' folder.
 
 You can install gulp globally :
 
